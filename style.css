@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  color: rgb(82, 160, 22)
 }
 
 /* Layout */
@@ -156,4 +157,14 @@ img {
 
 .hidden {
   display: none;
+}
+
+.winner {
+  border-radius: 1rem;
+  background-color: black;
+}
+
+div.newGame.again {
+  background-color: white;
+  opacity: 100%;
 }

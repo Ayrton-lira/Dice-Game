@@ -83,8 +83,7 @@ p.currentPoints2 {
 
 section.active {
   background-color: rgba(192, 225, 207, 0.989);
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  border-radius: 1rem;
 }
 
 /* justify buttons */
@@ -132,4 +131,29 @@ div.rollDice {
 
 div.hold {
   top: 33rem;
+}
+
+button {
+  display: disable;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+img {
+  position: absolute;
+  height: 120px;
+  width: auto;
+  z-index: 10;
+  border-radius: 0.7rem;
+  opacity: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  bottom: 23rem;
+}
+
+.hidden {
+  display: none;
 }

@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout */
+body {
+  background: rgb(226, 232, 227);
+  background: linear-gradient(153deg, rgba(226, 232, 227, 1) 0%, rgba(128, 228, 175, 0.9886201991465149) 30%, rgba(136, 232, 64, 1) 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* justifying middle box */
+main.container {
+  border: 1px solid black;
+  display: grid;
+  grid-template-areas:
+    "Player1 Player2"
+  ;
+  grid-template-columns: 1fr 1fr;
+  height: 35rem;
+  width: 45rem;
+  box-shadow: 1px 1px 50px 1px #888888;
+  border-radius: 1rem;
+}
+
+/* Data container in players box */
+section.player1 {
+  grid-area: Player1;
+}
+
+section.player2 {
+  grid-area: Player2;
+}
+
+section.player1,
+section.player2 {
+  /* border: 1px solid orange; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12rem;
+}
+
+h1.gamer {
+  font-size: 35px;
+}
+
+div.data1,
+div.data2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+p.totalPoints1,
+p.totalPoints2 {
+  font-size: 50px;
+}
+
+p.currentPoints1,
+p.currentPoints2 {
+  font-size: 30px;
+}
+
+.dataCurrent {
+  background-color: rgb(233, 247, 227);
+  height: 6rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 1rem;
+}
+
+section.active {
+  background-color: rgba(192, 225, 207, 0.989);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* justify buttons */
+div.newGame,
+div.rollDice,
+div.hold {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(233, 247, 227);
+  height: 20px;
+  width: auto;
+  padding: 5px;
+  z-index: 10;
+  border-radius: 0.7rem;
+  opacity: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+div.newGame {
+  top: 8rem;
+}
+
+div.rollDice {
+  top: 28rem;
+}
+
+div.hold {
+  top: 33rem;
+}

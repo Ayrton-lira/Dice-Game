@@ -57,6 +57,12 @@ holdDice.addEventListener('click', function () {
   if (playing) {
     score[`${activePlayer - 1}`] += currentScore
 
+    if (score[0] >= 10 || score[1] >= 10) {
+      document.querySelector(`.player${activePlayer}`).classList.add('winner')
+      document.querySelector('.newGame').classList.add('again')
+      playing = false
+    }
+
     if (activePlayer === 1) {
       document.querySelector('.player1').classList.remove('active')
       document.querySelector('.player2').classList.add('active')
@@ -64,11 +70,6 @@ holdDice.addEventListener('click', function () {
       document.querySelector(`.totalPoints${activePlayer}`).textContent =
         score[`${activePlayer - 1}`]
       activePlayer = 2
-      if (score[0] >= 50 || score[1] >= 50) {
-        document.querySelector('.player1').classList.add('winner')
-        document.querySelector('.newGame').classList.add('again')
-        playing = false
-      }
     } else {
       document.querySelector('.player2').classList.remove('active')
       document.querySelector('.player1').classList.add('active')
@@ -76,15 +77,20 @@ holdDice.addEventListener('click', function () {
       document.querySelector(`.totalPoints${activePlayer}`).textContent =
         score[`${activePlayer - 1}`]
       activePlayer = 1
-      if (score[0] >= 50 || score[1] >= 50) {
-        document.querySelector('.player2').classList.add('winner')
-        document.querySelector('.newGame').classList.add('again')
-        playing = false
-      }
     }
     console.log(score)
     console.log(playing)
   }
 })
 
-// console.log(playing)
+newGame.addEventListener('click', function () {
+  resetCurrentPoints()
+  document.querySelector(`.totalPoints1`).textContent = 0
+  document.querySelector(`.totalPoints2`).textContent = 0
+  document.querySelector(`.player1`).classList.remove('winner')
+  document.querySelector(`.player2`).classList.remove('winner')
+  document.querySelector('.newGame').classList.remove('again')
+  diceImg.classList.add('hidden')
+  score = [0, 0]
+  playing = true
+})
